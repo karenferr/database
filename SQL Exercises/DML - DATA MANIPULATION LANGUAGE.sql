@@ -29,7 +29,7 @@ UPDATE pedidos SET quantidade = 3 WHERE id_cliente = 2;
 UPDATE produtos SET estoque = 25 WHERE id_produto = 4;
 UPDATE clientes SET nome = 'pedro silva' WHERE id_cliente = 3;
 
---- UPDATE tabela SET coluna = valor; (SEM WHERE)
+--- UPDATE tabela SET coluna = valor; (sem WHERE)
 UPDATE produtos SET preco = preco * 1.05;
 UPDATE produtos SET estoque = 0;
 UPDATE clientes SET cidade = 'São Paulo';
@@ -58,6 +58,34 @@ DELETE FROM produtos WHERE id_produto = 11;
 ---
 INSERT INTO clientes (nome, email, cidade) VALUES ('joao silva', 'joao@g.com', 'salvador');
 INSERT INTO pedidos (id_cliente, id_produto, quantidade) VALUES (17, 8, 2), (17, 9, 12);
+DELETE FROM pedidos WHERE id_pedido = 17;
+---
+SELECT * FROM produtos;
+INSERT INTO produtos (nome_produto, preco, estoque) VALUES ('Impressora', 500.00, 1000);
+DELETE FROM produtos WHERE id_produto = 12; 
+---
+SELECT * FROM clientes;
+DELETE FROM clientes WHERE id_cliente = 6;
+---
+DELETE FROM clientes WHERE id_cliente = 14;
+---
+DELETE FROM pedidos WHERE id_produto = 9;
+DELETE FROM produtos WHERE id_produto = 9;
+SELECT * FROM pedidos;
+
+--- DELETE FROM tabela; (sem WHERE)
+DELETE FROM pedidos;
+DELETE FROM clientes;
+DELETE FROM produtos;
+---
+INSERT INTO clientes (nome, email, cidade) VALUES ('jose', 'jose@g.com', 'mutuipe');
+SELECT * FROM clientes;
+---
+SELECT * FROM produtos;
+INSERT INTO produtos (nome_produto, preco, estoque) VALUES ('Monitor', 800.00, 20);
+INSERT INTO pedidos (id_cliente, id_produto, quantidade) VALUES (18, 13, 2);
+
+
 
 
 
